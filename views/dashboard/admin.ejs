@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Admin Dashboard - JavaCoder</title>
+</head>
+<body class="container py-5">
+    <a href="/dashboard" class="btn btn-secondary"> <- Back</a>
+
+    <p>This is your admin dashboard.</p>
+
+
+    <!-- Courses Overview -->
+    <h3>Manage Courses</h3>
+    <a href="/create" class="btn btn-primary mb-3">Create New Course</a>
+    
+    <% if (courses.length > 0) { %>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Description</th>
+                    <th>Teacher</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach(course => { %>
+                    <tr>
+                        <td><%= course.title %></td>
+                        <td><%= course.description %></td>
+                        <td><%= course.teacher.fullName %></td>
+                        <td>
+                            <a href="/<%= course._id %>" class="btn btn-info btn-sm">View</a>
+                            <a href="/<%= course._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="/<%= course._id %>" method="POST" style="display:inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No courses available. <a href="/create">Create a new course</a>.</p>
+    <% } %>
+
+    <!-- Additional Links -->
+    <div class="mt-4">
+        <a href="/auth/logout" class="btn btn-danger">Logout</a>
+    </div>
+</body>
+</html>

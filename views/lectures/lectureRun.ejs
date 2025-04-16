@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title><%= lecture.title %> - JavaCoder</title>
+    <style>
+        .lecture-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+        }
+
+        .video-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold"><%= lecture.title %></h2>
+        <a href="/courses/<%= lecture.course._id %>" class="btn btn-outline-secondary btn-sm">← Back to Course</a>
+    </div>
+
+    <div class="lecture-container">
+        <!-- Left: Details -->
+        <div>
+            <div class="card p-4 mb-3">
+                <h5>Description</h5>
+                <p class="text-muted"><%= lecture.description %></p>
+            </div>
+            <div class="card p-4">
+                <h5>Content</h5>
+                <p><%= lecture.content %></p>
+            </div>
+        </div>
+
+        <div>
+            <% 
+            let embedUrl = '';
+            if (lecture.lectureUrl.includes("watch?v=")) {
+                // Regular YouTube link
+                embedUrl = lecture.lectureUrl.replace("watch?v=", "embed/").split('&')[0];
+            } else if (lecture.lectureUrl.includes("youtu.be/")) {
+                // Short YouTube link
+                const videoId = lecture.lectureUrl.split("youtu.be/")[1].split('?')[0];
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            }
+        %>
+        
+        <% if (embedUrl) { %>
+            <div class="video-frame mb-4">
+                <iframe src="<%= embedUrl %>" frameborder="0" allowfullscreen class="w-100 h-100"></iframe>
+            </div>
+        <% } else { %>
+            <div class="alert alert-warning">No video provided for this lecture.</div>
+        <% } %>
+        
+            
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

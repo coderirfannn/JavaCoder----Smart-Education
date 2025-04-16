@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - JavaCoder Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dashboard-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/dashboard">JavaCoder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/dashboard">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Flash Messages -->
+  <div class="container mt-4 fade-in">
+    <% if (success_msg) { %>
+      <div class="alert alert-success" role="alert"><%= success_msg %></div>
+    <% } %>
+    <% if (error_msg) { %>
+      <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+    <% } %>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="container mt-5 fade-in">
+    <h2 class="mb-3">Welcome, <%= user.fullName %> 👋</h2>
+    <p class="text-muted">Role: <strong><%= user.role.charAt(0).toUpperCase() + user.role.slice(1) %></strong></p>
+
+    <hr class="my-4">
+
+    <div class="row">
+      <% if (user.role === 'student') { %>
+        <div class="col-md-6 mb-4">
+          <div class="card dashboard-card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-book-reader me-2 text-primary"></i>My Courses</h5>
+              <p class="card-text">View enrolled courses, progress, and resources provided by your teachers.</p>
+              <a href="/dashboard/student" class="btn btn-primary">Go to Student Dashboard</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card dashboard-card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-star me-2 text-warning"></i>Your Teachers</h5>
+              <p class="card-text">Provide feedback on your learning experience to help improve the system.</p>
+              <a href="/dashboard/teacher-list" class="btn btn-outline-primary">View All Teacher</a>
+            </div>
+          </div>
+        </div>
+      <% } else if (user.role === 'teacher') { %>
+        <div class="col-md-6 mb-4">
+          <div class="card dashboard-card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-chalkboard-teacher me-2 text-success"></i>Manage Courses</h5>
+              <p class="card-text">Create and update course content, assignments, and materials.</p>
+              <a href="/dashboard/teacher" class="btn btn-success">Go to Teacher Dashboard</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card dashboard-card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-chart-line me-2 text-info"></i>Performance Tracking</h5>
+              <p class="card-text">Review student performance and respond to questions or feedback.</p>
+              <a href="/teacher/performance" class="btn btn-outline-success">View Insights</a>
+            </div>
+          </div>
+        </div>
+      <% } else if (user.role === 'admin') { %>
+        <div class="col-md-6 mb-4">
+          <div class="card dashboard-card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-users-cog me-2 text-danger"></i>User Management</h5>
+              <p class="card-text">Add or remove users, assign roles, and monitor activity across the platform.</p>
+              <a href="/dashboard/admin" class="btn btn-danger">Go to Admin Dashboard</a>
+
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="col-md-6 mb-4">
+            <div class="card dashboard-card h-100">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-server me-2 text-secondary"></i>System Control</h5>
+                <p class="card-text">Oversee system health, security, data backup, and performance stats.</p>
+                <a href="/dashboard/admin/guid" class="btn btn-outline-danger">System Settings Guid</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card dashboard-card h-100">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-server me-2 text-secondary"></i>See All Students</h5>
+                <p class="card-text">See student who take advantage of this platform.</p>
+                <a href="/dashboard/student/studentlist" class="btn btn-danger">All Students</a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        <div class="container my-5">
+            <div class="card shadow-lg border-0 rounded-4 p-4 bg-white">
+              <div class="card-body">
+                <h3 class="card-title mb-4 text-center fw-bold text-danger">
+                  <i class="fas fa-random me-2"></i>Teacher Transfer Panel
+                </h3>
+          
+                <p class="text-muted text-center mb-4">
+                  Transfer teachers to other schools based on performance, availability, or regional requirements.
+                  Only teachers with a rating above 4.0 are eligible.
+                </p>
+                <a href="/teachers/transfer" class="btn btn-danger">Transfer Teacher</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+
+
+      <% } %>
+    </div>
+
+    <div class="text-center mt-5">
+      <p class="text-muted">JavaCoder Platform – Empowering Education with Technology 💻📚</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

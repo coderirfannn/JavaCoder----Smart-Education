@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Guide - JavaCoder Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9fafb;
+    }
+    .section-title {
+      border-left: 5px solid #dc3545;
+      padding-left: 15px;
+      margin-top: 30px;
+    }
+    .guide-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .guide-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/dashboard/admin">JavaCoder Admin</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/dashboard/admin">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin/settings">Settings</a></li>
+          <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Guide Content -->
+  <div class="container py-5">
+    <h1 class="mb-4 text-danger fw-bold text-center">📘 Admin Panel Guide</h1>
+    <p class="text-muted text-center">Everything you need to know to manage the JavaCoder Platform efficiently.</p>
+
+    <div class="section-title mt-5">
+      <h3>User Management</h3>
+    </div>
+    <div class="card guide-card mb-4">
+      <div class="card-body">
+        <ul>
+          <li><strong>Add or Remove Users:</strong> Use the "Manage Users" tab to create new users or delete existing ones.</li>
+          <li><strong>Assign Roles:</strong> Choose from Student, Teacher, or Admin while creating users.</li>
+          <li><strong>Reset Passwords:</strong> Admins can manually reset user credentials if needed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>Teacher Transfer System</h3>
+    </div>
+    <div class="card guide-card mb-4">
+      <div class="card-body">
+        <ul>
+          <li><strong>Monitor Ratings:</strong> Teachers with a rating above 4.0 can be promoted or transferred.</li>
+          <li><strong>Approve Transfers:</strong> Navigate to the “Teacher Requests” section to review and approve transfer requests.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>Course Oversight</h3>
+    </div>
+    <div class="card guide-card mb-4">
+      <div class="card-body">
+        <ul>
+          <li><strong>Course Creation:</strong> Ensure courses follow curriculum guidelines before approving them.</li>
+          <li><strong>Teacher Assignments:</strong> Assign certified teachers to relevant courses.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h3>Platform Monitoring</h3>
+    </div>
+    <div class="card guide-card mb-4">
+      <div class="card-body">
+        <ul>
+          <li><strong>Activity Logs:</strong> Keep track of user activity for security and analysis.</li>
+          <li><strong>Security:</strong> Ensure only verified users access sensitive routes.</li>
+          <li><strong>Performance:</strong> Check loading times and error reports regularly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="/dashboard" class="btn btn-danger">Back to Admin Dashboard</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

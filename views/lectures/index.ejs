@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectures</title>
+    <link rel="stylesheet" href="/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+
+
+    <h1>Lectures for <%= course.title %></h1>
+
+    <% if (course.lectures.length > 0) { %>
+        <ul>
+            <% course.lectures.forEach(lecture => { %>
+                <li><a href="/lectures/lecture/<%= lecture._id %>"><%= lecture.title %></a></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No lectures available for this course.</p>
+    <% } %>
+
+    <a href="/courses/<%= course._id %>" class="btn">Back to Course</a>
+</body>
+</html>

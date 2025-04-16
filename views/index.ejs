@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaCoder Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-indigo-600">JavaCoder</a>
+      <div class="space-x-4">
+      <a href="/auth/about" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded mr-3 hover:bg-gray-100">About</a>
+
+        <a href="/auth/login" class="text-gray-700 hover:text-indigo-600 font-medium">Login</a>
+        <a href="/auth/register" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Video Background -->
+  <section class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-[-1]">
+      <source src="/upload/bacg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0  bg-opacity-60 z-0"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 px-4 max-w-2xl text-white fade-in-up">
+     
+        <!-- <a href="/auth/login" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition-all">Login</a>
+        <a href="/auth/register" class="bg-indigo-700 text-white font-semibold px-6 py-3 rounded hover:bg-indigo-800 transition-all">Register</a> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-24 text-center fade-in-up">
+    <div class="max-w-2xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to JavaCoder Platform</h1>
+      <p class="text-lg mb-6">A smart learning system for students, teachers, and admins. Learn, teach, and manage everything—seamlessly.</p>
+      <a href="/auth/login" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded mr-3 hover:bg-gray-100">Login</a>
+      <a href="/auth/register" class="bg-indigo-700 text-white font-semibold px-6 py-3 rounded hover:bg-indigo-800">Register</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center fade-in-up">
+      <h2 class="text-3xl font-bold mb-4">About JavaCoder</h2>
+      <p class="text-gray-600 text-lg">JavaCoder is an all-in-one educational platform designed for seamless communication and efficient learning. Whether you're a student striving to master coding, a teacher aiming to deliver better content, or an admin managing users and content—JavaCoder makes it simple and effective.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12">Platform Highlights</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow fade-in-up">
+          <h3 class="text-xl font-semibold mb-2">👨‍🎓 For Students</h3>
+          <p>Interactive courses, quizzes, assignment tracking, and course ratings to enhance learning.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow fade-in-up">
+          <h3 class="text-xl font-semibold mb-2">👩‍🏫 For Teachers</h3>
+          <p>Create and manage content, evaluate students, and get promoted based on student ratings.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow fade-in-up">
+          <h3 class="text-xl font-semibold mb-2">🛡️ Admin Control</h3>
+          <p>Role-based dashboard to approve users, monitor data, and transfer top-rated teachers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center fade-in-up">
+      <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold text-lg mb-2">1. Register & Login</h4>
+          <p>Choose your role (student/teacher), sign up, and get started in minutes.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-2">2. Explore Your Dashboard</h4>
+          <p>Students can access enrolled courses, teachers can manage their teaching hub.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-2">3. Engage & Learn</h4>
+          <p>Submit assignments, take quizzes, earn ratings, and grow your knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">What Our Users Say</h2>
+      <div class="grid md:grid-cols-2 gap-8 fade-in-up">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="mb-4">“JavaCoder transformed the way I learn. The quizzes and rating system keep me motivated!”</p>
+          <p class="font-semibold">— Aarav, Student</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="mb-4">“Managing my classes and getting student feedback is easier than ever!”</p>
+          <p class="font-semibold">— Ms. Sharma, Teacher</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="bg-gray-50 p-4 rounded-lg shadow">
+          <h4 class="font-semibold mb-2">Is JavaCoder free to use?</h4>
+          <p>Yes, it’s 100% free for students and teachers. Admin approval required for teacher access.</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow">
+          <h4 class="font-semibold mb-2">What makes JavaCoder different?</h4>
+          <p>It's more than a classroom—real-time rating, automated transfer system, and AI-generated quizzes make it powerful.</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow">
+          <h4 class="font-semibold mb-2">Can I track student performance?</h4>
+          <p>Yes! Teachers and admins can track quiz scores, assignment submissions, and ratings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-gradient-to-br from-indigo-50 to-white">
+    <div class="max-w-6xl mx-auto px-6 text-center fade-in-up">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">Our Mission & Vision</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+        JavaCoder is more than a platform—it's a national mission to uplift digital education. We're here to bridge gaps, empower educators, and bring advanced learning tools to every classroom, in collaboration with government initiatives.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">📖 Quality Learning</h3>
+          <p class="text-gray-600">Delivering real-world coding knowledge and interactive lessons for every student—no matter their location or background.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">👩‍🏫 Teacher Empowerment</h3>
+          <p class="text-gray-600">We equip teachers with modern tools to teach, track progress, and grow professionally based on transparent feedback.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">🏛️ Govt. Collaboration</h3>
+          <p class="text-gray-600">Built in partnership with institutions to modernize infrastructure, ensure accountability, and support national education reforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-indigo-600 text-white text-center fade-in-up">
+    <h2 class="text-3xl font-bold mb-4">Start Your Journey with JavaCoder Today</h2>
+    <p class="mb-6">Empower your learning or teaching with the smartest platform on the web.</p>
+    <a href="/auth/register" class="bg-white text-indigo-600 px-6 py-3 rounded font-semibold hover:bg-gray-100">Join Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2025 JavaCoder Platform. All rights reserved.</p>
+    <p>Made with ❤️ by and for passionate learners.</p>
+  </footer>
+
+</body>
+</html>

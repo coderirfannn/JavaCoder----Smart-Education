@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Create Lecture - JavaCoder</title>
+</head>
+<body class="container py-5 bg-light">
+
+    <div class="card shadow-sm mx-auto" style="max-width: 700px;">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Create New Lecture</h4>
+        </div>
+
+        <div class="card-body">
+            <form action="/lectures/course/<%= courseId %>" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Lecture Title</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Lecture Description</label>
+                    <textarea id="description" name="description" rows="3" class="form-control" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="content" class="form-label">Lecture Content</label>
+                    <textarea id="content" name="content" rows="5" class="form-control" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lectureUrl" class="form-label">Lecture URL (optional)</label>
+                    <input type="url" id="lectureUrl" name="lectureUrl" class="form-control" placeholder="https://example.com/video">
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a href="/courses/<%= courseId %>" class="btn btn-secondary">Back to Course</a>
+                    <button type="submit" class="btn btn-success">Create Lecture</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>All Courses</h1>
+    <a href="/courses/create" class="btn">Create New Course</a>
+
+
+    <div class="courses">
+        <% if (courses.length > 0) { %>
+            <ul>
+                <% courses.forEach(course => { %>
+                    <li>
+                        <h2><a href="/courses/<%= course._id %>"><%= course.title %></a></h2>
+                        <p><%= course.description %></p>
+                        <p><strong>Teacher:</strong> <%= course.teacher.fullName %></p>
+                        <a href="/courses/<%= course._id %>/edit" class="btn">Edit</a>
+                        <form action="/courses/<%= course._id %>" method="POST" style="display:inline;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn">Delete</button>
+                        </form>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No courses available.</p>
+        <% } %>
+    </div>
+</body>
+</html>

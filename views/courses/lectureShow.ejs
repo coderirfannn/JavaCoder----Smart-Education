@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title><%= course.title %> - JavaCoder</title>
+</head>
+<body class="bg-light">
+<div class="container py-5">
+
+    <!-- Course Header -->
+    <div class="mb-4">
+        <h2 class="text-primary fw-bold"><%= course.title %></h2>
+        <p class="text-muted"><%= course.description %></p>
+        <p><strong>Instructor:</strong> <%= course.teacher.fullName %></p>
+        <a class="btn btn-outline-primary btn-sm" href="/course/<%= course.id %>">Give Rate</a>
+        
+        <a href="/dashboard/student" class="btn btn-outline-secondary btn-sm">← Back to Dashboard</a>
+    </div>
+
+    <!-- Lectures Section -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title mb-3">Lectures</h4>
+            <% if (lectures.length > 0) { %>
+                <div class="list-group">
+                    <% lectures.forEach(lecture => { %>
+                        <a href="/lectures/lecture/<%= lecture._id %>" class="list-group-item list-group-item-action">
+                            <strong><%= lecture.title %></strong>
+                            <br>
+                            <small class="text-muted"><%= lecture.description %></small>
+                        </a>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <p class="text-muted">No lectures available for this course yet.</p>
+            <% } %>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
