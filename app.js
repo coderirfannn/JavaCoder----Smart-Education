@@ -25,7 +25,9 @@ app.use(methodOverride('_method'));
 app.use(session({
     secret: process.env.SESSION_SECRET || 'javacoder_secret',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store:process.env.MONGO_URI,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }));
 app.use(flash());
 
