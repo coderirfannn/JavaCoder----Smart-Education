@@ -3,7 +3,7 @@ const User = require('./models/User');  // Import User model
 const Course = require('./models/Course');  // Import Course model
 
 // Connect to MongoDB (replace with your connection string)
-mongoose.connect('mongodb+srv://mohdirfan70097:S9K45Sb6qx7hV1uK@datastoreuser.4icchwu.mongodb.net/?retryWrites=true&w=majority&appName=datastoreuser', {
+mongoose.connect('mongodb+srv://mohdirfan70097:M5Qh9P6RwIkJ2sup@cluster0.jvnobnt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
