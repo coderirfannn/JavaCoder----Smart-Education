@@ -8,7 +8,7 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Coder Irfan",
   "license": "ISC",
   "description": "",
   "dependencies": {
