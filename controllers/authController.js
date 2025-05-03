@@ -5,6 +5,8 @@ exports.showRegister = (req, res) => {
     res.render('auth/register');
 };
 
+//sdfv
+
 // @desc    Register user
 exports.registerUser = async (req, res) => {
     const { fullName, email, password, role } = req.body;
