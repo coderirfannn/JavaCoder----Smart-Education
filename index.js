@@ -49,9 +49,9 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/', require('./routes/indexRoutes'));
-app.use('/auth', require('./routes/authRoutes'));
-app.use('/dashboard', require('./routes/dashboardRoutes'));
+app.use('/', require('./routes/indexRoutes.js'));
+app.use('/auth', require('./routes/authRoutes.js'));
+app.use('/dashboard', require('./routes/dashboardRoutes.js'));
 app.use("/" , require("./routes/courseRoutes.js"));
 app.use("/" ,require("./routes/lectureRoutes.js"));
 app.use("/" ,require("./routes/StudentRoutes.js"));
