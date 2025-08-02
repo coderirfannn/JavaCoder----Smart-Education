@@ -1,7 +1,7 @@
 # JavaCoder----Smart-Education
 # JavaCoder Platform 🏫💻
 
-JavaCoder is a government-level education platform designed to digitally empower schools and institutions. It provides role-based dashboards for Students, Teachers, and Admins — offering tools for online learning, class/course management, digital content, AI-generated quizzes, and performance tracking. Built using Node.js, Express.js, MongoDB, EJS, and Tailwind CSS, the platform follows the MVC architecture for clean code organization.
+JavaCoder is a government-level education platform designed to digitally empower schools and institutions. It provides role-based dashboards for Students, Teachers, and Admins — offering tools for online learning, class/course management, digital content. Built using Node.js, Express.js, MongoDB, EJS, and Tailwind CSS, the platform follows the MVC architecture for clean code organization.
 
 ---
 
